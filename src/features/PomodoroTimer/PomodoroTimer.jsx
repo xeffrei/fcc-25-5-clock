@@ -16,6 +16,12 @@ export const PomodoroTimer = () => {
         >
           ➖
         </div>
+        <div
+          data-testid='session-increment'
+          id='session-increment'
+        >
+          ➕
+        </div>
       </>
     )
   }
@@ -35,6 +41,12 @@ export const PomodoroTimer = () => {
           id='break-decrement'
         >
           ➖
+        </div>
+        <div
+          data-testid='break-increment'
+          id='break-increment'
+        >
+          ➕
         </div>
       </>
     )

@@ -29,4 +29,20 @@ describe('PomodoroTimer', () => {
       'session-decrement'
     )
   })
+
+  it('contains an element with id break-increment', () => {
+    const { getByTestId } = render(<PomodoroTimer />)
+    expect(getByTestId(/break-increment/i)).toHaveAttribute(
+      'id',
+      'break-increment'
+    )
+  })
+
+  it('contains an element with id session-increment', () => {
+    const { getByTestId } = render(<PomodoroTimer />)
+    expect(getByTestId(/session-increment/i)).toHaveAttribute(
+      'id',
+      'session-increment'
+    )
+  })
 })
