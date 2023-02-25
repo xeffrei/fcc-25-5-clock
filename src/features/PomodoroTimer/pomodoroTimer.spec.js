@@ -13,4 +13,20 @@ describe('PomodoroTimer', () => {
     expect(getByTestId(/session-label/i)).toHaveAttribute('id', 'session-label')
     expect(getByTestId(/session-label/i)).toHaveTextContent('Session Length')
   })
+
+  it('contains an element with id break-decrement', () => {
+    const { getByTestId } = render(<PomodoroTimer />)
+    expect(getByTestId(/break-decrement/i)).toHaveAttribute(
+      'id',
+      'break-decrement'
+    )
+  })
+
+  it('contains an element with id session-decrement', () => {
+    const { getByTestId } = render(<PomodoroTimer />)
+    expect(getByTestId(/session-decrement/i)).toHaveAttribute(
+      'id',
+      'session-decrement'
+    )
+  })
 })
