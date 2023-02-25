@@ -7,5 +7,5 @@ import App from './App'
 test('renders counter', () => {
   const { getByTestId } = render(<App />)
 
-  expect(getByTestId(/counter/i)).toBeInTheDocument()
+  expect(getByTestId(/pomodoro-timer/i)).toBeInTheDocument()
 })

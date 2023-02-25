@@ -1,12 +1,12 @@
 import React from 'react'
-import Counter from './features/counter/Counter'
 import './App.css'
+import { PomodoroTimer } from './features/PomodoroTimer/PomodoroTimer'
 
 function App() {
   return (
     <div className='App'>
       <header className='App-header'>
-        <Counter />
+        <PomodoroTimer />
       </header>
     </div>
   )
