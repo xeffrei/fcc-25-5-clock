@@ -45,4 +45,19 @@ describe('PomodoroTimer', () => {
       'session-increment'
     )
   })
+
+  it('contains an element with id break-length, that by default (on load) displays a value of 5', () => {
+    const { getByTestId } = render(<PomodoroTimer />)
+    expect(getByTestId(/break-length/i)).toHaveAttribute('id', 'break-length')
+    expect(getByTestId(/break-length/i)).toHaveTextContent('5')
+  })
+
+  it('contains an element with id session-length, that by default (on load) displays a value of 25', () => {
+    const { getByTestId } = render(<PomodoroTimer />)
+    expect(getByTestId(/session-length/i)).toHaveAttribute(
+      'id',
+      'session-length'
+    )
+    expect(getByTestId(/session-length/i)).toHaveTextContent('25')
+  })
 })
