@@ -1,6 +1,6 @@
 import React, { Fragment } from 'react'
 export const PomodoroTimer = () => {
-  const sessionTracker = () => {
+  const sessionSettings = () => {
     // may become its own feature/component later
     return (
       <>
@@ -32,7 +32,7 @@ export const PomodoroTimer = () => {
     )
   }
 
-  const breakTracker = () => {
+  const breakSettings = () => {
     // may become its own feature/component later
     return (
       <>
@@ -67,8 +67,8 @@ export const PomodoroTimer = () => {
   return (
     <div data-testid='pomodoro-timer'>
       <h1>🍅 Pomodoro Timer 🍅</h1>
-      {breakTracker()}
-      {sessionTracker()}
+      {breakSettings()}
+      {sessionSettings()}
     </div>
   )
 }
