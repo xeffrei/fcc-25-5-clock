@@ -64,11 +64,26 @@ export const PomodoroTimer = () => {
     )
   }
 
+  const timerDisplay = () => {
+    // may become its own feature/component later
+    return (
+      <>
+        <div
+          data-testid='timer-label'
+          id='timer-label'
+        >
+          Session
+        </div>
+      </>
+    )
+  }
+
   return (
     <div data-testid='pomodoro-timer'>
       <h1>🍅 Pomodoro Timer 🍅</h1>
       {breakSettings()}
       {sessionSettings()}
+      {timerDisplay()}
     </div>
   )
 }
