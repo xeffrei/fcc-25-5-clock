@@ -1,11 +1,10 @@
 import React from 'react'
-import { render } from '@testing-library/react'
-import { Provider } from 'react-redux'
-import { store } from './app/store'
+import { screen } from '@testing-library/react'
+import { renderWithProviders } from './utils/testProviderUtil'
 import App from './App'
 
 test('renders counter', () => {
-  const { getByTestId } = render(<App />)
-
-  expect(getByTestId(/pomodoro-timer/i)).toBeInTheDocument()
+  renderWithProviders(<App />)
+  const pomodoroTimer = screen.getByTestId('pomodoro-timer')
+  expect(pomodoroTimer).toBeInTheDocument()
 })
