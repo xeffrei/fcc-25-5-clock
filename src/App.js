@@ -1,6 +1,6 @@
 import React from 'react'
 import './App.css'
-import { PomodoroTimer } from './features/PomodoroTimer/PomodoroTimer'
+import PomodoroTimer from './features/PomodoroTimer/PomodoroTimer'
 
 function App() {
   return (

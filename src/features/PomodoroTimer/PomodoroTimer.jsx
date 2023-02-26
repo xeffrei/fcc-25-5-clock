@@ -1,5 +1,17 @@
 import React, { Fragment } from 'react'
+import { Provider } from 'react-redux'
+import store from '../../app/store'
+import { useSelector, useDispatch } from 'react-redux'
+import {
+  decrementSession,
+  incrementSession,
+  selectSessionLength,
+} from './pomodoroTimerSlice'
+
 export const PomodoroTimer = () => {
+  const sessionLength = useSelector(selectSessionLength)
+  const dispatch = useDispatch()
+
   const sessionSettings = () => {
     // may become its own feature/component later
     return (
@@ -13,6 +25,7 @@ export const PomodoroTimer = () => {
         <div
           data-testid='session-decrement'
           id='session-decrement'
+          onClick={() => dispatch(decrementSession())}
         >
           ➖
         </div>
@@ -20,11 +33,12 @@ export const PomodoroTimer = () => {
           data-testid='session-length'
           id='session-length'
         >
-          25
+          {sessionLength}
         </div>
         <div
           data-testid='session-increment'
           id='session-increment'
+          onClick={() => dispatch(incrementSession())}
         >
           ➕
         </div>
@@ -74,6 +88,12 @@ export const PomodoroTimer = () => {
         >
           Session
         </div>
+        <div
+          data-testid='time-left'
+          id='time-left'
+        >
+          {sessionLength < 10 ? `0${sessionLength}:00` : `${sessionLength}:00`}
+        </div>
       </>
     )
   }
@@ -87,3 +107,13 @@ export const PomodoroTimer = () => {
     </div>
   )
 }
+
+export const PomodoroTimerProvider = () => {
+  return (
+    <Provider store={store}>
+      <PomodoroTimer />
+    </Provider>
+  )
+}
+
+export default PomodoroTimerProvider

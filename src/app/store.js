@@ -1,8 +1,21 @@
-import { configureStore } from '@reduxjs/toolkit'
+import { configureStore, combineReducers } from '@reduxjs/toolkit'
 import counterReducer from '../features/counter/counterSlice'
+import pomodoroTimerReducer from '../features/PomodoroTimer/pomodoroTimerSlice'
 
-export const store = configureStore({
-  reducer: {
-    counter: counterReducer,
-  },
+export const rootReducer = combineReducers({
+  counter: counterReducer,
+  timer: pomodoroTimerReducer,
 })
+
+const store = configureStore({
+  reducer: rootReducer,
+})
+
+export const setupStore = (preloadedState = {}) => {
+  return configureStore({
+    reducer: rootReducer,
+    preloadedState,
+  })
+}
+
+export default store
