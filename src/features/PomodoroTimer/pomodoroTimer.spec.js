@@ -60,4 +60,10 @@ describe('PomodoroTimer', () => {
     )
     expect(getByTestId(/session-length/i)).toHaveTextContent('25')
   })
+
+  it('contains an element with id timer-label, that contains text "Session"', () => {
+    const { getByTestId } = render(<PomodoroTimer />)
+    expect(getByTestId(/timer-label/i)).toHaveAttribute('id', 'timer-label')
+    expect(getByTestId(/timer-label/i)).toHaveTextContent('Session')
+  })
 })
