@@ -104,4 +104,13 @@ describe('timer functions', () => {
       expect(startStopButton).toHaveTextContent('Start')
     })
   })
+
+  describe('reset button', () => {
+    it('contains an element with id reset', () => {
+      renderWithProviders(<PomodoroTimer />)
+      const resetButton = screen.getByTestId('reset')
+      expect(resetButton).toHaveAttribute('id', 'reset')
+      expect(resetButton).toHaveTextContent('Reset')
+    })
+  })
 })
