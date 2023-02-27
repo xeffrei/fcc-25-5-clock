@@ -20,7 +20,7 @@ export const pomodoroTimerSlice = createSlice({
     },
 
     reset: (state) => {
-      state = initialState
+      state.sessionLength = initialState.sessionLength
     },
     startTimer: (state) => {
       state.isSession = true
@@ -32,6 +32,6 @@ export const pomodoroTimerSlice = createSlice({
 export const { incrementSession, decrementSession, reset, startTimer } =
   pomodoroTimerSlice.actions
 
-export const selectSessionLength = (state) => state.timer.sessionLength 
+export const selectSessionLength = (state) => state.timer.sessionLength
 
 export default pomodoroTimerSlice.reducer

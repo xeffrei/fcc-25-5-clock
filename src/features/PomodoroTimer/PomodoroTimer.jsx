@@ -6,6 +6,7 @@ import {
   decrementSession,
   incrementSession,
   selectSessionLength,
+  reset,
 } from './pomodoroTimerSlice'
 
 export const PomodoroTimer = () => {
@@ -87,6 +88,13 @@ export const PomodoroTimer = () => {
           id='start_stop'
         >
           Start/Stop
+        </div>
+        <div
+          data-testid='reset'
+          id='reset'
+          onClick={() => dispatch(reset())}
+        >
+          Reset
         </div>
       </>
     )
