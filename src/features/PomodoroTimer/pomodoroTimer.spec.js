@@ -94,3 +94,14 @@ describe('Session settings', () => {
     })
   })
 })
+
+describe('timer functions', () => {
+  describe('start-stop button', () => {
+    it('contains an element with id start-stop', () => {
+      renderWithProviders(<PomodoroTimer />)
+      const startStopButton = screen.getByTestId('start_stop')
+      expect(startStopButton).toHaveAttribute('id', 'start_stop')
+      expect(startStopButton).toHaveTextContent('Start')
+    })
+  })
+})

@@ -78,6 +78,20 @@ export const PomodoroTimer = () => {
     )
   }
 
+  const timerFunctions = () => {
+    // may become its own feature/component later
+    return (
+      <>
+        <div
+          data-testid='start_stop'
+          id='start_stop'
+        >
+          Start/Stop
+        </div>
+      </>
+    )
+  }
+
   const timerDisplay = () => {
     // may become its own feature/component later
     return (
@@ -104,6 +118,7 @@ export const PomodoroTimer = () => {
       {breakSettings()}
       {sessionSettings()}
       {timerDisplay()}
+      {timerFunctions()}
     </div>
   )
 }
