@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react'
+import React from 'react'
 import { Provider } from 'react-redux'
 import store from '../../app/store'
 import { useSelector, useDispatch } from 'react-redux'
@@ -6,11 +6,13 @@ import {
   decrementSession,
   incrementSession,
   selectSessionLength,
+  selectTimeLeft,
   reset,
-} from './pomodoroTimerSlice'
+} from './timerSlice'
 
-export const PomodoroTimer = () => {
+export const Timer = () => {
   const sessionLength = useSelector(selectSessionLength)
+  const timeleft = useSelector(selectTimeLeft)
   const dispatch = useDispatch()
 
   const sessionSettings = () => {
@@ -114,7 +116,7 @@ export const PomodoroTimer = () => {
           data-testid='time-left'
           id='time-left'
         >
-          {sessionLength < 10 ? `0${sessionLength}:00` : `${sessionLength}:00`}
+          {timeleft < 10 ? `0${timeleft}:00` : `${timeleft}:00`}
         </div>
       </>
     )
@@ -131,12 +133,12 @@ export const PomodoroTimer = () => {
   )
 }
 
-export const PomodoroTimerProvider = () => {
+export const TimerProvider = () => {
   return (
     <Provider store={store}>
-      <PomodoroTimer />
+      <Timer />
     </Provider>
   )
 }
 
-export default PomodoroTimerProvider
+export default TimerProvider

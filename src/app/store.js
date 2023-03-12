@@ -1,6 +1,6 @@
 import { configureStore, combineReducers } from '@reduxjs/toolkit'
 import counterReducer from '../features/counter/counterSlice'
-import pomodoroTimerReducer from '../features/PomodoroTimer/pomodoroTimerSlice'
+import pomodoroTimerReducer from '../features/timer/timerSlice'
 
 export const rootReducer = combineReducers({
   counter: counterReducer,

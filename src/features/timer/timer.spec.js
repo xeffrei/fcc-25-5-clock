@@ -1,7 +1,7 @@
 import { screen } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 import { renderWithProviders } from '../../utils/testProviderUtil'
-import PomodoroTimer from './PomodoroTimer'
+import PomodoroTimer from './timer'
 
 describe('PomodoroTimer', () => {
   it('contains an element with id break-label, that contains string Break Length', () => {
